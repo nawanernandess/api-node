@@ -5,17 +5,31 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --watch server.js"
+    "dev": "tsx watch src/http/server.ts",
+    "build": "tsc",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^7.8.0",
     "fastify": "^4.28.1",
-    "postgres": "^3.4.4"
+    "postgres": "^3.4.4",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
-    "dotenv": "^16.4.5"
+    "@eslint/js": "^9.39.5",
+    "@types/node": "^26.1.1",
+    "dotenv": "^16.4.5",
+    "eslint": "^9.39.5",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-unused-imports": "^4.4.1",
+    "tsx": "^4.23.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.64.0"
   }
 }
