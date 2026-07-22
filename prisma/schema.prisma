@@ -11,7 +11,7 @@ model Users {
   id          String  @id @default(uuid()) @db.Uuid
   name        String
   email       String  @unique
-  phone       String  @unique
+  phone       String? @unique
   description String? @db.Text
   isUserAdmin Boolean @default(false)
 }
