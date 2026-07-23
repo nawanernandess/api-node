@@ -2,8 +2,8 @@ import type { FastifyPluginCallback } from 'fastify';
 import { z } from 'zod';
 import { prisma } from '../lib/prisma.js';
 
-export const createUser: FastifyPluginCallback = (app, _opts, done) => {
-  app.post('/user', async (request, reply) => {
+export const createUsers: FastifyPluginCallback = (app, _opts, done) => {
+  app.post('/users', async (request, reply) => {
     const createUserBody = z.object({
       name: z.string().min(1, 'Name is required'),
       email: z.email('Invalid email address'),

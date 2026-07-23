@@ -2,7 +2,10 @@ import 'dotenv/config';
 
 import fastify from 'fastify';
 import { ZodError } from 'zod';
-import { createUser } from './routes/create-user.js';
+import { createUsers } from './routes/create-users.js';
+import { deleteUsers } from './routes/delete-users.js';
+import { getUsers } from './routes/get-users.js';
+import { patchUsers } from './routes/patch-users.js';
 
 const server = fastify();
 
@@ -14,6 +17,9 @@ server.setErrorHandler((error, _request, reply) => {
   return reply.status(500).send({ message: 'Internal server error' });
 });
 
-server.register(createUser);
+server.register(createUsers);
+server.register(getUsers);
+server.register(patchUsers);
+server.register(deleteUsers);
 
 await server.listen({ port: 8080 });
